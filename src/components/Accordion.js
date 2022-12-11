@@ -10,19 +10,12 @@ function Accordion({ items }) {
     const renderedItems = items.map((item, index) => {
         const isExpanded = index === expandedIndex;
 
-        // const handleClick = () => {
-        //     setExpandedIndex(index);
-        // };
+        const icon = <span>{isExpanded ? 'DOWN' : 'LEFT'}</span>;
 
         return (
             <div key={item.id}>
-                <div
-                    // onClick={() => {
-                    //     console.log(index);
-                    //     setExpandedIndex(index);
-                    // }}
-                    onClick={() => handleClick(index)}
-                >
+                <div onClick={() => handleClick(index)}>
+                    {icon}
                     {item.label}
                 </div>
                 {isExpanded && <div>{item.content}</div>}
