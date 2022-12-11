@@ -4,7 +4,9 @@ function App() {
     return (
         <div>
             <div>
-                <Button success primary rounded outline>Click here!</Button>
+                <Button primary rounded outline>
+                    Click here!
+                </Button>
             </div>
             <div>
                 <Button></Button>
