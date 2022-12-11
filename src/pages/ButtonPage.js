@@ -1,12 +1,12 @@
 import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
-import Button from './components/Button';
+import Button from '../components/Button';
 
-function App() {
+function ButtonPage() {
     const handleClick = () => {
         console.log('Click!');
     };
 
-    return ( 
+    return (
         <div>
             <div>
                 <Button className="mb-5" primary rounded outline onClick={handleClick}>
@@ -36,4 +36,4 @@ function App() {
     );
 }
 
-export default App;
+export default ButtonPage;
