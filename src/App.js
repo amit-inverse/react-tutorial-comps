@@ -9,16 +9,16 @@ function App() {
                 </Button>
             </div>
             <div>
-                <Button></Button>
+                <Button secondary>Click here!</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button success>Click here!</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button warning>Click here!</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button danger>Click here!</Button>
             </div>
         </div>
     );
