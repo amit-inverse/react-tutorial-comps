@@ -1,6 +1,6 @@
 import className from 'classnames';
 
-function Button({ children, primary, secondary, success, warning, danger, outline, rounded }) {
+function Button({ children, primary, secondary, success, warning, danger, outline, rounded, onClick }) {
     const classes = className('flex items-center px-3 py-1.5 border', {
         'border-blue-500 bg-blue-500 text-white': primary,
         'border-gray-900 bg-gray-900 text-white': secondary,
@@ -16,7 +16,11 @@ function Button({ children, primary, secondary, success, warning, danger, outlin
         'text-red-500': outline && danger,
     });
 
-    return <button className={classes}>{children}</button>;
+    return (
+        <button onClick={onClick} className={classes}>
+            {children}
+        </button>
+    );
 }
 
 Button.propTypes = {
