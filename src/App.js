@@ -15,13 +15,13 @@ function App() {
                 </Button>
             </div>
             <div>
-                <Button secondary>
+                <Button secondary onMouseEnter={handleClick}>
                     <GoCloudDownload />
                     Click here!
                 </Button>
             </div>
             <div>
-                <Button success>
+                <Button success onMouseLeave={handleClick}>
                     <GoDatabase />
                     Click here!
                 </Button>
