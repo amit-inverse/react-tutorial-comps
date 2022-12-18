@@ -16,12 +16,12 @@ function NavigationProvider({ children }) {
         };
     }, []);
 
-    return (
-        <NavigationContext.Provider value={{}}>
-            {currentPath}
-            {children}
-        </NavigationContext.Provider>
-    );
+    const navigate = (to) => {
+        window.history.pushState({}, '', to);
+        setCurrentPath(to);
+    };
+
+    return <NavigationContext.Provider value={{ currentPath, navigate }}>{children}</NavigationContext.Provider>;
 }
 
 export { NavigationProvider };
