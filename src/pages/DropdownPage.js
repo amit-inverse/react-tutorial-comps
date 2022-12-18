@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Dropdown from './components/Dropdown';
+import Dropdown from '../components/Dropdown';
 
-function App() {
+function DropdownPage() {
     const [selection, setSelection] = useState(null);
 
     const handleSelect = (option) => {
@@ -16,10 +16,9 @@ function App() {
 
     return (
         <div className="flex">
-            <a href="/dashboard">Dashboard</a>
             <Dropdown options={options} value={selection} onChange={handleSelect} />
         </div>
     );
 }
 
-export default App;
+export default DropdownPage;
