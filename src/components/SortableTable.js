@@ -1,5 +1,5 @@
-import { type } from '@testing-library/user-event/dist/type';
 import { useState } from 'react';
+import { GoArrowSmallDown, GoArrowSmallUp } from 'react-icons/go';
 import Table from './Table';
 
 function SortableTable(props) {
@@ -28,9 +28,11 @@ function SortableTable(props) {
         return {
             ...column,
             header: () => (
-                <th onClick={() => handleClick(column.label)}>
-                    {getIcons(column.label, sortBy, sortOrder)}
-                    {column.label}
+                <th className="cursor-pointer hover:bg-gray-100" onClick={() => handleClick(column.label)}>
+                    <div className="flex items-center">
+                        {getIcons(column.label, sortBy, sortOrder)}
+                        {column.label}
+                    </div>
                 </th>
             ),
         };
@@ -66,15 +68,33 @@ function SortableTable(props) {
 
 function getIcons(label, sorBy, sortOrder) {
     if (label !== sorBy) {
-        return 'show both';
+        return (
+            <div>
+                <GoArrowSmallUp />
+                <GoArrowSmallDown />
+            </div>
+        );
     }
 
     if (sortOrder === null) {
-        return 'show both';
+        return (
+            <div>
+                <GoArrowSmallUp />
+                <GoArrowSmallDown />
+            </div>
+        );
     } else if (sortOrder === 'asc') {
-        return 'up';
+        return (
+            <div>
+                <GoArrowSmallUp />
+            </div>
+        );
     } else if (sortOrder === 'desc') {
-        return 'down';
+        return (
+            <div>
+                <GoArrowSmallDown />
+            </div>
+        );
     }
 }
 
